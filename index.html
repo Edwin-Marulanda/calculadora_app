@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- Scripts -->
+  <script src="./js/main.js" defer></script>
+  <script src="./js/selects.js" defer></script>
+
+  <title>Calculadora de calorías</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="bg-dark py-2">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Nutrición</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Planes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content ">
+    <section class="container pt-1 pb-5 d-flex justify-content-center">
+      <form id="formulario-calculadora" >
+        <div class="bg-calculadora m-5 w-87 pt-4 rounded">
+          <div class="row mt-0 pt-0">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+              <span class="custom-title"> Calculadora de Calorias </span>
+            </div>
+          </div>
+          <div class="rounded custom-info m-3">
+            <div class="row mb-0 pb-0">
+              <div id="text-bienvenida" class="col-12 rounded d-flex justify-content-center align-items-center">
+                <span style="font-size: 70px">BIENVENIDO</span>
+              </div>
+              <div id="text-resultado" class="col-12 rounded d-flex justify-content-center align-items-center">
+                <span id="resultadoGp" ></span>
+                <span id="resultado" ></span>
+              </div>
+            </div>
+
+          </div>
+          <div class="row ms-2 me-2">
+            <div class="col-9">
+            </div>
+            <div class="col-1 d-flex justify-content-end pe-0">
+              <label class="form-check-label" for="genero">F</label>
+            </div>
+            <div class="col-1 ">
+              <div class="form-check form-switch me-0 pe-0">
+                <input class="form-check-input color-check" type="checkbox" role="switch" id="genero">
+              </div>
+            </div>
+            <div class="col-1 ms-0 ps-0">
+              <label class="form-check-label" for="genero">M</label>
+            </div>
+          </div>
+          <div class="row ms-2 me-2">
+            <div class="col-12">
+              <label for="nombre" class="form-label h6">Nombre</label>
+              <input type="text" id="nombre" required class="form-control" min="4" max="50"
+                placeholder="Digíte su nombre">
+            </div>
+          </div>
+          <div class="row ms-2 me-2">
+            <div class="col-6">
+              <label for="tipoDocumento" class="form-label h6">Tipo de documento</label>
+              <select id="tipoDocumento" class="form-select" required>
+                <option></option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="numeroDoc" class="form-label h6">Número de documento</label>
+              <input type="number" id="numeroDoc" class="form-control"  max="9999999999"
+                placeholder="Digíte su número de documento" required>
+            </div>
+          </div>
+          <div class="row ms-2 me-2">
+            <div class="col-3">
+
+              <label for="edad" class="form-label h6">Edad</label>
+              <input type="number" id="edad" class="form-control" min="15" max="80" placeholder="Digíte su edad" required>
+
+            </div>
+            <div class="col-4">
+              <div class="mb-3">
+                <label for="peso" class="form-label h6">Peso</label>
+                <input type="number" id="peso" class="form-control" required placeholder="Digíte su peso en kilogramos">
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="mb-3">
+                <label for="altura" class="form-label h6">Altura</label>
+                <input type="number" id="altura" class="form-control" placeholder="Digíte su altura en centímetros" required>
+              </div>
+            </div>
+          </div>
+          <div class="row ms-2 me-2">
+            <div class="mb-3">
+              <label for="actividad" class="form-label h6">Actividad física</label>
+              <select id="actividad" class="form-select" required>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex justify-content-center my-3">
+                <button type="submit" class="btn btn-danger w-75" style="font-size: 1.5rem">Calcular</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer row p-3">
+    <div class="col d-flex justify-content-right align-items-center">
+      <ul>
+        <li>✖️ <a href="#">Instagram</a></li>
+        <li>✖️ <a href="#">Facebook</a></li>
+        <li>✖️ <a href="#">Telegram</a></li>
+      </ul>
+    </div>
+
+    <div class="col d-flex justify-content-right align-items-center">
+      <ul>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Guías</a></li>
+        <li><a href="#">Acesorías</a></li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+      <p class="m-0"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio voluptate qui adipisci,
+          hic voluptatibus totam dolorem cumque repellendus amet! Repudiandae, ab error unde porro sint fugit qui
+          temporibus, consequatur dolores sit quas perspiciatis omnis magnam iure ut, quod dignissimos molestias
+          voluptas architecto nam! Accusantium corporis sit eos dolorum accusamus.</span></p>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
