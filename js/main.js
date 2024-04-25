@@ -3,9 +3,10 @@ const resultado = document.getElementById('resultado');
 const textoBienvenida = document.getElementById('text-bienvenida');
 const textoResultado = document.getElementById('text-resultado');
 const resultadoGp= document.getElementById('resultadoGp');
+const resultadoG= document.getElementById('resultadoG');
 const valoresTMB = { "xPeso": 10, "xAltura": 6.25, "xEdad": 5 }
 
-
+ 
 //variables
 let genero = false;
 let nombre = "";
@@ -47,6 +48,8 @@ function calcularCalorias() {
 
 function calcularParaMasculino() {
     //Formula hombres: valor actividad x (10 x peso en kg) + (6,25 × altura en cm) - (5 × edad en años) + 5
+    let numCalorias = actividadFisica *(valoresTMB.xPeso*peso)+(valoresTMB.xAltura*altura)-(valoresTMB.xEdad*edad)+5;
+    mostrarResultado(numCalorias);
 
 }
 
@@ -59,7 +62,12 @@ function calcularParaFemenino() {
 function mostrarResultado(numCalorias) {
     textoBienvenida.style = "display: none !important"
     textoResultado.style = "display: grid !important"
-    resultadoGp.innerHTML = "Grupo poblacional: "+grupoPoblacional();
+    resultadoGp.innerHTML = "Grupo poblacional: " + grupoPoblacional();
+    if(genero){
+        resultadoG.innerHTML = "Genero: Masculino";
+    }else{
+        resultadoG.innerHTML = "Genero: Femenino";
+    }
     resultado.innerHTML = `El paciente ${nombre} identificado con ${tipoDocumento} NO. ${numDocumento}, requiere un total de ${numCalorias} kcal para el sostenimiento de su TBM`
 
 }
@@ -67,6 +75,12 @@ function mostrarResultado(numCalorias) {
 function limpiarCampos(){
     document.getElementById('genero').checked=false;
     document.getElementById('nombre').value= "";
+    document.getElementById('tipoDocumento').value = "";
+    document.getElementById('numeroDoc').value = 0;
+    document.getElementById('edad').value = 0;
+    document.getElementById('peso').value = 0;
+    document.getElementById('altura').value = 0;
+    document.getElementById('actividad').value = "";
 }
 
 function grupoPoblacional(){

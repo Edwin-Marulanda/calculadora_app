@@ -38,3 +38,4 @@ function actividadFisicaAdd() {
 
 tiposDocumento();
 actividadFisicaAdd();
+limpiarCampos();

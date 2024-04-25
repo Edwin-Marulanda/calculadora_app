@@ -68,12 +68,13 @@ body::-webkit-scrollbar-thumb {
 
 .custom-info {
     background-color: #cee5dd;
-    height: 100px;
+    min-height: 100px;
+    max-height: 200px;
     width: 600px;
     font-family: font-calculadora;
     font-weight: bold;
     font-size: 22px;
-
+    resize: vertical; 
 }
 
 .custom-title {
@@ -129,4 +130,8 @@ label {
     50% {
         border-color: transparent;
     }
+}
+
+.parent-container {
+    margin: 0 auto;
 }
